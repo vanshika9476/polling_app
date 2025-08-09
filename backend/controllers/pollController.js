@@ -4,7 +4,7 @@ const pollController = {
   // Create a new poll
   createPoll: async (req, res) => {
     try {
-      const { question, options } = req.body;
+      const { question, options, timer } = req.body;
 
       // Close any existing active poll before creating a new one
       await Poll.updateMany({ isActive: true }, { isActive: false });
@@ -17,6 +17,7 @@ const pollController = {
       const poll = new Poll({
         question,
         options: formattedOptions,
+        timer: timer || 60, // Use the timer from request body or default to 60
         isActive: true,
         startTime: new Date(),
       });

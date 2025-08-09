@@ -163,15 +163,30 @@ function App() {
 
     case "waitingForTeacher":
       return (
-        <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="min-h-screen bg-white flex items-center justify-center relative">
           <div className="text-center">
-            <div className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-purple-100 text-purple-800 mb-4">
-              🔴 Internet Poll
+            {/* Branding */}
+            <div className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-gradient-to-r from-purple-500 to-purple-600 text-white mb-8">
+              <span className="mr-1">★</span>
+              Intervue Poll
             </div>
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto mb-4"></div>
-            <h2 className="text-xl font-bold text-gray-900 mb-2">
+            
+            {/* Loading Spinner */}
+            <div className="w-16 h-16 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto mb-8"></div>
+            
+            {/* Instructional Text */}
+            <h2 className="text-xl font-bold text-black">
               Wait for the teacher to ask questions..
             </h2>
+          </div>
+          
+          {/* Chat Icon - Bottom Right */}
+          <div className="absolute bottom-6 right-6">
+            <button className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center text-white hover:bg-purple-700 transition-colors">
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clipRule="evenodd" />
+              </svg>
+            </button>
           </div>
         </div>
       );
