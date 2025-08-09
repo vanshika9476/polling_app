@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
 
-<<<<<<< HEAD
 const mongoUri =
   process.env.MONGODB_URI || "mongodb://localhost:27017/polling-app";
 
@@ -10,29 +9,17 @@ mongoose.connect(mongoUri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
-=======
-mongoose.connect(process.env.MONGO_URL);
->>>>>>> bc3ba50f0348e4f1c1d6be687f049c34e2cb42e7
 
 const db = mongoose.connection;
 
 db.on("connected", () => {
-<<<<<<< HEAD
   console.log("DB Connected to:", mongoUri);
-=======
-  console.log("DB Connected.");
->>>>>>> bc3ba50f0348e4f1c1d6be687f049c34e2cb42e7
 });
 db.on("disconnected", () => {
   console.log("DB Disconnected.");
 });
-<<<<<<< HEAD
 db.on("error", (error) => {
   console.log("DB Error:", error);
-=======
-db.on("error", () => {
-  console.log("Error Came");
->>>>>>> bc3ba50f0348e4f1c1d6be687f049c34e2cb42e7
 });
 
 module.exports = db;

@@ -12,19 +12,12 @@
   "description": "",
   "dependencies": {
     "bcrypt": "^6.0.0",
-<<<<<<< HEAD
     "cors": "^2.8.5",
-=======
->>>>>>> bc3ba50f0348e4f1c1d6be687f049c34e2cb42e7
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.17.1",
-<<<<<<< HEAD
     "nodemon": "^3.1.10",
     "socket.io": "^4.8.1"
-=======
-    "nodemon": "^3.1.10"
->>>>>>> bc3ba50f0348e4f1c1d6be687f049c34e2cb42e7
   }
 }
