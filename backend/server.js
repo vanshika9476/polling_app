@@ -12,7 +12,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: ["http://localhost:5173", "http://localhost:5174"],
+    origin: "*",
     methods: ["GET", "POST"],
   },
 });
@@ -22,7 +22,7 @@ const PORT = 3000;
 // Middleware
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5174"],
+    origin: "*",
     credentials: true,
   })
 );
