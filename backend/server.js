@@ -1,5 +1,4 @@
 const express = require("express");
-<<<<<<< HEAD
 const http = require("http");
 const socketIo = require("socket.io");
 const cors = require("cors");
@@ -87,7 +86,7 @@ io.on("connection", (socket) => {
         clearTimeout(pollTimers.get(pollId));
         pollTimers.delete(pollId);
       }
-      
+
       await Poll.findByIdAndUpdate(pollId, { isActive: false });
       io.emit("poll-closed", pollId);
       console.log(`Poll ${pollId} manually closed`);
@@ -102,20 +101,5 @@ io.on("connection", (socket) => {
 });
 
 server.listen(PORT, () => {
-=======
-const userRouter = require("./routes/auth");
-const db = require("./initializer/db");
-const authMiddleware = require("./middlewares/authMiddleware");
-
-const app = express();
-const PORT = 3000;
-
-app.use(express.json());
-
-app.use("/api/v1", userRouter);
-
-
-app.listen(PORT, () => {
->>>>>>> bc3ba50f0348e4f1c1d6be687f049c34e2cb42e7
   console.log("Server is listening on port: ", PORT);
 });
